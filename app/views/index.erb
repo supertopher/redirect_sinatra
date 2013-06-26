@@ -1,23 +1,20 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
+  <h1>Welcome to Chairman Meow's URL Communiser!!</h1>
   <p>Hello, world!</p>
 
   <table>
     <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
+      Welcome to the URL shortener! It makes your crazy URLs very small.
     </tr>
   </table>
+
+  <form action="/">
+    <input type="text" name="full_url" placeholder="e.g., blah.org">
+    <button type="submit">Gimme dat Short URL</button>
+  </form>
 </div>
+<center>
+  <img src='meow.jpg'>
+</center>
+
+
