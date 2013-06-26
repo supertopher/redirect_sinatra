@@ -6,12 +6,29 @@ end
 post '/' do
   # create a new Url
   full_url = params[:full_url]
-  # user_input = Url.create (full_url: full_url) 
-  short_url = nil
-  redirect '/urls'
+  @user_input = Url.create(full_url: full_url, click_counter: 0) 
+  @short_url = @user_input.id
+  redirect "/#{@short_url}"
 end
 
 # e.g., /q6bda
 get '/:short_url' do
-  # redirect to appropriate "long" URL
+  @display_url = params[:short_url]
+  @original_url = Url.find(@display_url).full_url
+  @count = Url.find(@display_url).click_counter
+  erb :url
 end
+
+get '/r/:short_url' do
+  short = params[:short_url].to_i
+  this_record = Url.find(short)
+  destination = this_record.full_url
+  this_record.click_counter += 1
+  this_record.save
+  redirect "http://www.#{destination}"
+end
+
+# get '/u' do
+#   puts "hi"
+  
+# end
