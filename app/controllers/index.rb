@@ -1,6 +1,17 @@
+enable :sessions 
+
 get '/' do
+
   # let user create new short URL, display a list of shortened URLs
   erb :index
+end
+
+post '/login' do
+  p params
+  if User.authenticate(params[:email], params[:password])
+    @current_user = "GET IN MY BELLY!"
+  end
+  erb :login
 end
 
 post '/' do
