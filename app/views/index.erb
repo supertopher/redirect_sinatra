@@ -1,26 +1,4 @@
-<div class="failed_login">
-  No such user or bad password... press submit to create new user
-</div>
 
-<div class="login_area">
-
-  <% unless @user %>
-    <center>
-      <form action="/login" method="POST">
-        <input type="text" name="email" placeholder="Email Address">
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit">Communize!11one</button>
-      </form>
-    </center>
-  <% else %>
-  <div class="logged_in">
-    Comrade: <%= @user.name %>
-    <hr/>
-    <form action="/logout" method="POST">
-        <button type="submit">LogOUT</button>
-    </form>
-  </div>
-  <% end %>
 
 </div>
 <div class="container">

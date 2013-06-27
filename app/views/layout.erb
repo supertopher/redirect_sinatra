@@ -18,13 +18,37 @@
   <title>COMMUNIST CAT COALITION</title>
 </head>
 <body>
-  <header>
-    <h1><a href="http://localhost:9393">Welcome to Chairman Meow's URL Communiser!!</a></h1>
-    <p>Great Leader Meow!</p>
-  </header>
-  <%= yield %>
-  <center>
-  <img src='meow.jpg'>
-</center>
-</body>
-</html>
+  <div class="failed_login">
+    No such user or bad password... press submit to create new user
+  </div>
+
+  <div class="login_area">
+
+    <% unless @user %>
+    <center>
+      <form action="/login" method="POST">
+        <input type="text" name="email" placeholder="Email Address">
+        <input type="password" name="password" placeholder="Password">
+        <button class="user_submit" type="submit">Communize!11one</button>
+      </form>
+    </center>
+    <% else %>
+    <div class="logged_in">
+      Comrade: <%= @user.name %>
+      <hr/>
+      <form action="/logout" method="POST">
+        <button type="submit">LogOUT</button>
+      </form>
+    </div>
+    <% end %>
+    
+    <header>
+      <h1><a href="http://localhost:9393">Welcome to Chairman Meow's URL Communiser!!</a></h1>
+      <p>Great Leader Meow!</p>
+    </header>
+    <%= yield %>
+    <center>
+      <img src='http://localhost:9393/meow.jpg'>
+    </center>
+  </body>
+  </html>

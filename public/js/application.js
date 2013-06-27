@@ -9,6 +9,7 @@ $(document).ready(function() {
       if (input_data === '')
       {
         $('.failed_login').show();
+        $('.user_submit').text("Create User")
       }
     });   
   });

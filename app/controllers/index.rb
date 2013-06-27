@@ -16,7 +16,6 @@ post '/login' do
     session[:user_id]     = @user.id
     session[:user_email]  = @user.email
   end
-  
 end
 
 post '/logout' do
@@ -51,5 +50,6 @@ get '/r/:short_url' do
 end
 
 get '/users/:id' do
-  
+  @display_user = User.find(params[:id]).name
+  erb :user
 end
