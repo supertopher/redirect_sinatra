@@ -1,11 +1,31 @@
 .container {
   margin: 20px auto;
   width: 600px;
-  padding: 0px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   background-color: white;
   -moz-box-shadow:    inset 0 0 10px #000000;
   -webkit-box-shadow: inset 0 0 10px #000000;
   box-shadow:         inset 0 0 10px #000000;
+}
+header a{
+  color: black;
+  text-decoration: none;
+}
+header{
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  background-color: white;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:
+}
+
+.failed_login{
+  text-align: center;
+  margin: auto;
+  color: white;
+  background-color: red;
 }
 
 button{

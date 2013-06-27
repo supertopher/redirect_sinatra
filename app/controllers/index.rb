@@ -2,6 +2,7 @@ enable :sessions
 before do
   current_user
 end
+
 get '/' do
 
   # let user create new short URL, display a list of shortened URLs
@@ -15,7 +16,7 @@ post '/login' do
     session[:user_id]     = @user.id
     session[:user_email]  = @user.email
   end
-  erb :login
+  
 end
 
 post '/logout' do
@@ -49,7 +50,6 @@ get '/r/:short_url' do
   redirect "http://www.#{destination}"
 end
 
-# get '/u' do
-#   puts "hi"
+get '/users/:id' do
   
-# end
+end
